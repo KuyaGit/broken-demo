@@ -29,7 +29,7 @@ export class AuthService {
     const payload = { name: user.username, email: user.email};
     return {
       status: 200,
-      access_token: this.jwtService.sign(payload),
+      access_token: this.jwtService.sign(payload, {secret: 'test123'}),
     };
   }
 }
